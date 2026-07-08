@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Read what Cleaning With Care customers in Regina say about our residential, deep clean, and commercial cleaning services." />
+  <title>Testimonials | Cleaning With Care</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <style>
+    .rating-summary {
+      background: var(--teal);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+      color: var(--white);
+      margin-bottom: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 64px;
+      flex-wrap: wrap;
+    }
+    .rating-big { font-family: var(--font-display); font-size: 4rem; font-weight: 700; line-height: 1; }
+    .rating-stars { font-size: 1.6rem; color: #f4b942; margin: 8px 0; }
+    .rating-count { font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+    .rating-divider { width: 1px; height: 80px; background: rgba(255,255,255,0.2); }
+    .rating-fact { text-align: center; }
+    .rating-fact-num { font-family: var(--font-display); font-size: 2.4rem; font-weight: 700; }
+    .rating-fact-label { font-size: 0.85rem; color: rgba(255,255,255,0.8); margin-top: 4px; }
+    @media (max-width: 600px) {
+      .rating-summary { gap: 32px; padding: 32px 24px; }
+      .rating-divider { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══════════════ NAVBAR ══════════════ -->
+  <header class="navbar">
+    <div class="navbar-topbar">
+      <div class="container">
+        <div class="topbar-contact">
+          <a href="tel:+16395543534">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16l.42.92z"/></svg>
+            +1 (639) 554-3534
+          </a>
+          <a href="mailto:cleaningwithcare.team@gmail.com">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            cleaningwithcare.team@gmail.com
+          </a>
+        </div>
+        <div class="topbar-social">
+          <a href="#" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar-main" aria-label="Main navigation">
+      <div class="container">
+        <a href="/" class="navbar-logo">
+          <div class="logo-placeholder" aria-hidden="true">C</div>
+          <div class="logo-text">
+            <strong>Cleaning With Care</strong>
+            <span>Regina &amp; Surrounding Areas</span>
+          </div>
+        </a>
+        <ul class="navbar-nav" role="list">
+          <li><a href="/">Home</a></li>
+          <li><a href="/services/">Services</a></li>
+          <li><a href="/testimonials/" class="active">Testimonials</a></li>
+          <li><a href="/get-quote/">Get a Quote</a></li>
+        </ul>
+        <a href="/get-quote/" class="btn btn-primary navbar-cta">Get a Free Quote</a>
+        <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+      <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+        <a href="/">Home</a>
+        <a href="/services/">Services</a>
+        <a href="/testimonials/" class="active">Testimonials</a>
+        <a href="/get-quote/">Get a Quote</a>
+        <div class="mobile-contact">
+          <a href="tel:+16395543534"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16l.42.92z"/></svg>+1 (639) 554-3534</a>
+          <a href="mailto:cleaningwithcare.team@gmail.com"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>cleaningwithcare.team@gmail.com</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <span class="section-eyebrow" style="background:rgba(255,255,255,0.15); color:#fff; margin-bottom:12px;">Client Reviews</span>
+        <h1>What Our Customers Say</h1>
+        <p>Real reviews from real clients across Regina and surrounding areas.</p>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-page">
+      <div class="container">
+
+        <!-- Rating summary -->
+        <div class="rating-summary" role="region" aria-label="Overall rating summary">
+          <div>
+            <div class="rating-big">5.0</div>
+            <div class="rating-stars">★★★★★</div>
+            <div class="rating-count">Average customer rating</div>
+          </div>
+          <div class="rating-divider" aria-hidden="true"></div>
+          <div class="rating-fact">
+            <div class="rating-fact-num">5+</div>
+            <div class="rating-fact-label">Years in Business</div>
+          </div>
+          <div class="rating-divider" aria-hidden="true"></div>
+          <div class="rating-fact">
+            <div class="rating-fact-num">100%</div>
+            <div class="rating-fact-label">Would Recommend</div>
+          </div>
+          <div class="rating-divider" aria-hidden="true"></div>
+          <div class="rating-fact">
+            <div class="rating-fact-num">Regina</div>
+            <div class="rating-fact-label">Proudly Local</div>
+          </div>
+        </div>
+
+        <!-- Reviews grid -->
+        <div class="testimonials-grid">
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              My home looks and smells absolutely wonderful after the deep clean. The team was incredibly efficient,
+              friendly, and professional. I now have them come every second week — I couldn't be happier with the results!
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">L</div>
+              <div class="author-info"><strong>Lorraine M.</strong><span>Residential &amp; Deep Clean, Regina</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              Highly reliable, friendly, and professional. If you're looking for someone who will do the job right,
+              book with Cleaning With Care. You won't regret it — they get it done properly every single time.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">R</div>
+              <div class="author-info"><strong>Raven T.</strong><span>Regular Client, Regina</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              I've had them do multiple jobs for me over the years including commercial cleans, move-out cleans for
+              my revenue properties, and bi-weekly house cleaning. The team is excellent, always happy, and very
+              fairly priced. Highly recommend without hesitation.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">B</div>
+              <div class="author-info"><strong>Ben W.</strong><span>Commercial &amp; Residential, Regina</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              From crystal-clean windows to sparkling floors — they did not miss a single thing. We had a one-time
+              deep clean done before a family event and the results were absolutely amazing. Will definitely be
+              calling them again.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">D</div>
+              <div class="author-info"><strong>Dawn K.</strong><span>One-Time Deep Clean, Regina</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              We hired Cleaning With Care for a move-out clean on our rental property and they went above and beyond.
+              The place was spotless — our tenants were impressed and we got our damage deposit back in full. Worth
+              every penny!
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">S</div>
+              <div class="author-info"><strong>Sandra P.</strong><span>Move-Out Clean, Regina</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              Booking was simple, they showed up exactly on time, and the quality of the clean blew me away.
+              My apartment hadn't looked that good since I first moved in. Affordable, professional, and genuinely
+              care about the work they do.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">M</div>
+              <div class="author-info"><strong>Marcus J.</strong><span>Residential Clean, Regina</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              We use Cleaning With Care for our office space and couldn't be happier. The team is discreet,
+              thorough, and always leaves everything in perfect order. Our employees have noticed and appreciated
+              the difference. Highly recommended for any business.
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">T</div>
+              <div class="author-info"><strong>Tanya R.</strong><span>Commercial Client, Regina</span></div>
+            </div>
+          </article>
+
+          <article class="testimonial-card">
+            <div class="testimonial-stars">★★★★★</div>
+            <p class="testimonial-text">
+              I was a bit hesitant at first since I'd never hired a cleaning service before, but from the very
+              first visit I was completely sold. The team is so kind and thorough. My home feels like a completely
+              different place — I only wish I'd called sooner!
+            </p>
+            <div class="testimonial-author">
+              <div class="author-avatar">A</div>
+              <div class="author-info"><strong>Angela H.</strong><span>Bi-Weekly Residential, Regina</span></div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Band -->
+    <section class="cta-band">
+      <div class="container">
+        <span class="section-eyebrow" style="background:rgba(255,255,255,0.15); color:#fff;">Join Our Happy Clients</span>
+        <h2>Ready to Experience the Difference?</h2>
+        <p>Get a free quote today and see why Regina trusts Cleaning With Care.</p>
+        <div class="cta-band-actions">
+          <a href="/get-quote/" class="btn btn-white">Get a Free Quote</a>
+          <a href="tel:+16395543534" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.5);">Call +1 (639) 554-3534</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="navbar-logo" style="pointer-events:none;">
+            <div class="logo-placeholder">C</div>
+            <div class="logo-text"><strong>Cleaning With Care</strong><span>Professional Cleaning Services</span></div>
+          </div>
+          <p class="footer-tagline">Proudly serving Regina and surrounding areas with reliable, high-quality cleaning services for over 5 years.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/services/">Services</a></li>
+            <li><a href="/testimonials/">Testimonials</a></li>
+            <li><a href="/get-quote/">Get a Quote</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact Us</h4>
+          <address>
+            <a href="tel:+16395543534"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.41 2 2 0 0 1 3.58 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.56a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16l.42.92z"/></svg>+1 (639) 554-3534</a>
+            <a href="mailto:cleaningwithcare.team@gmail.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>cleaningwithcare.team@gmail.com</a>
+            <span style="display:flex; gap:8px; align-items:flex-start;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top:2px; flex-shrink:0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span style="color:rgba(255,255,255,0.65); font-size:0.9rem;">Regina &amp; Surrounding Areas, SK</span></span>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Cleaning With Care. All rights reserved.</p>
+        <p>Serving Regina, SK &amp; Surrounding Areas</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
