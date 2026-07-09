@@ -34,10 +34,9 @@
     <nav class="navbar-main" aria-label="Main navigation">
       <div class="container">
         <a href="/" class="navbar-logo">
-          <div class="logo-placeholder" aria-hidden="true">C</div>
+          <img src="/img/Logo.png" alt="Cleaning With Care Logo" class="logo-img" />
           <div class="logo-text">
             <strong>Cleaning With Care</strong>
-            <span>Regina &amp; Surrounding Areas</span>
           </div>
         </a>
         <ul class="navbar-nav" role="list">
@@ -242,5 +241,149 @@
   </footer>
 
   <script src="../js/main.js"></script>
+  <script>
+  // ============================================
+  //  CLEANING WITH CARE — Quote Form (iframe method)
+  //  Bypasses CORS issues with Google Apps Script
+  // ============================================
+  (function () {
+
+    // !! Paste your deployed Google Apps Script URL here !!
+    var WEBAPP_URL = "https://script.google.com/macros/s/AKfycbybc-jCtxoyqACUyviVkeRFn21HWYLubbuc11F3sgKCh0Ywzts7tiP058faC8qrrHJS/exec";
+
+    var form       = document.getElementById("quoteForm");
+    var successBox = document.getElementById("formSuccess");
+    var submitBtn  = form ? form.querySelector("button[type='submit']") : null;
+
+    if (!form || !submitBtn) return;
+
+    // Create a hidden iframe — this is what actually submits the data
+    // It avoids the CORS block that fetch() hits with Google Apps Script
+    var iframe = document.createElement("iframe");
+    iframe.name            = "cwc-submission-frame";
+    iframe.style.display   = "none";
+    iframe.style.position  = "absolute";
+    iframe.style.width     = "0";
+    iframe.style.height    = "0";
+    iframe.style.border    = "none";
+    document.body.appendChild(iframe);
+
+    // This function is called by the iframe's page on success
+    window.formSuccess = function () {
+      clearTimeout(fallbackTimer);
+      form.style.display = "none";
+      if (successBox) successBox.classList.add("visible");
+    };
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      clearError();
+
+      // ── Collect values ──
+      var firstName = (document.getElementById("firstName")?.value || "").trim();
+      var lastName  = (document.getElementById("lastName")?.value  || "").trim();
+      var phone     = (document.getElementById("phone")?.value     || "").trim();
+      var email     = (document.getElementById("email")?.value     || "").trim();
+      var service   = (document.getElementById("service")?.value   || "").trim();
+      var details   = (document.getElementById("details")?.value   || "").trim();
+
+      // ── Validation ──
+      if (!firstName || !phone || !email) {
+        showError("Please fill in your name, phone, and email before submitting.");
+        return;
+      }
+      if (!isValidEmail(email)) {
+        showError("Please enter a valid email address.");
+        return;
+      }
+
+      // ── Loading state ──
+      submitBtn.disabled    = true;
+      submitBtn.innerHTML   = "Sending&hellip;";
+
+      // ── Build a real HTML form that targets the hidden iframe ──
+      // This is the only reliable way to send data to Google Apps Script
+      // from a browser without hitting CORS errors
+      var tempForm = document.createElement("form");
+      tempForm.method  = "GET";
+      tempForm.action  = WEBAPP_URL;
+      tempForm.target  = "cwc-submission-frame";
+      tempForm.style.display = "none";
+
+      var fields = {
+        firstName : firstName,
+        lastName  : lastName,
+        phone     : phone,
+        email     : email,
+        service   : service,
+        details   : details
+      };
+
+      Object.keys(fields).forEach(function (key) {
+        var input   = document.createElement("input");
+        input.type  = "hidden";
+        input.name  = key;
+        input.value = fields[key];
+        tempForm.appendChild(input);
+      });
+
+      document.body.appendChild(tempForm);
+      tempForm.submit();
+      document.body.removeChild(tempForm);
+
+      // ── Fallback timer ──
+      // If formSuccess() isn't called within 12 seconds,
+      // assume it worked anyway (iframe doesn't always fire onload)
+      var fallbackTimer = setTimeout(function () {
+        form.style.display = "none";
+        if (successBox) successBox.classList.add("visible");
+      }, 12000);
+
+      // ── Listen for iframe load as a faster success signal ──
+      iframe.onload = function () {
+        try {
+          // If same-origin, window.parent.formSuccess() fires from inside
+          // For cross-origin (GAS), we catch the error and use fallback
+          var iDoc = iframe.contentDocument || iframe.contentWindow.document;
+          if (iDoc && iDoc.body && iDoc.body.innerHTML.length > 0) {
+            clearTimeout(fallbackTimer);
+            form.style.display = "none";
+            if (successBox) successBox.classList.add("visible");
+          }
+        } catch (crossOriginErr) {
+          // Cross-origin — formSuccess() callback or fallback timer handles it
+        }
+      };
+    });
+
+    // ── Helpers ──────────────────────────────────────────────
+    function isValidEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function showError(msg) {
+      clearError();
+      var el         = document.createElement("p");
+      el.id          = "cwc-form-error";
+      el.textContent = msg;
+      el.style.cssText = "color:#c0392b;font-size:0.88rem;font-weight:600;" +
+                         "margin-top:12px;text-align:center;";
+      form.appendChild(el);
+      setTimeout(clearError, 6000);
+    }
+
+    function clearError() {
+      var el = document.getElementById("cwc-form-error");
+      if (el) el.remove();
+      submitBtn.disabled  = false;
+      submitBtn.innerHTML = 'Send My Quote Request ' +
+        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" ' +
+        'stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">' +
+        '<line x1="22" y1="2" x2="11" y2="13"/>' +
+        '<polyline points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+    }
+
+  })();
+</script>
 </body>
 </html>

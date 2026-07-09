@@ -261,9 +261,10 @@ h1, h2, h3, h4 {
 }
 .logo-text strong {
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  color: var(--teal);
+  font-size: 1.45rem;
+  color: black;
   font-weight: 700;
+  letter-spacing: 0.01em;
 }
 .logo-text span {
   font-size: 0.72rem;
